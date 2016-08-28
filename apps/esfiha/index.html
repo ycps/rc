@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html ng-app="EsfihaApp" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Esfiha na C.U.E.C.A.</title>
+	<meta charset="utf-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">!-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<!-- GOOGLE FONTS !-->
+	<!--
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	!-->
+	
+		<!-- JQUERY !-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+	
+		<!-- ANGULARJS !-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+	<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-sanitize.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.26/angular.js"></script>
+	<script src="https://code.angularjs.org/1.2.26/angular-animate.js"></script>
+	!-->
+	
+		<!-- ANGULAR TOASTER !-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.css">
+	
+		<!-- ANGULAR LOADING BAR !-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.8.0/loading-bar.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.8.0/loading-bar.min.js"></script>
+	
+		<!-- NPROGRESS !-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+	
+		<!-- JSON HUMAN !-->
+	<script src="src/js/json.human.js"></script>
+	
+		<!-- BOOTSTRAP !-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	<!--<
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	!-->
+	
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff2'>
+	
+		<!-- FONT AWESOME !-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	
+		<!-- ANGULAR UI BOOTSTRAP !-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js"></script>
+	
+		<!-- LAVISH BOOTSTRAP !-->
+	<link href="css/themes/lav/1.css" rel="stylesheet" type="text/css"/>
+	
+		<!-- BOOTSWATCH BOOTSTRAP !-->
+	<link href="css/themes/bootswatch/lumen/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	
+		<!-- ANIMATE CSS !-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+	
+		<!-- CUSTOM !-->
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/animation.css" rel="stylesheet" type="text/css">
+	
+		<!-- FAVICONS !-->
+	<link rel="shortcut icon" href="media/favicon.ico" />
+	<link rel="icon" href="media/favicon.ico" />
+	
+<style></style></head>
+
+<body><div ng-controller="MainCtrl" class="">
+<div class="container-fluid">
+	
+	<div class="jumbotron">
+		<div class="text-center row-fluid"><h2 class="myExFontAwesomeJumboh1">Esfiha na C.U.E.C.A</h2></div>
+	</div>
+
+		<div ng-if="false" class="panel-header navbar navbar-fixed-top animated slideInDown">
+			<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+		</div>
+
+		
+		<div ng-if="showAdmin" ng-model="viewAdmin">
+			<div ng-include="'html/viewAdmin.html'"></div>
+		</div>
+		
+		<div ng-if="PICK.show" ng-model="viewPick">
+			<div ng-include="'html/viewPick.html'"></div>
+		</div>
+		
+		<div ng-if="GRUP.show" ng-model="viewGrup">
+			<div ng-include="'html/viewGrup.html'"></div>
+		</div>
+		
+		<div ng-if="GRID.show" ng-model="viewGrid">
+			<div ng-include="'html/viewGrid.html'"></div>
+		</div>
+	
+</div>
+</div>	
+<script src="src/js/MainCtrl.js"></script>
+</body></html>
+

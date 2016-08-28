@@ -1,0 +1,24 @@
+/* Affect all 'ng-if' changes */
+.ng-enter {
+	-webkit-animation: fadeIn 1s;
+	-moz-animation: fadeIn 1s;
+	-ms-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+.ng-leave {
+	-webkit-animation: fadeOut 1s;
+	-moz-animation: fadeOut 1s;
+	-ms-animation: fadeOut 1s;
+	animation: fadeOut 1s;
+}
+
+/* Affect 'ng-show' changes */
+.my-fader.ng-hide-add {
+	-webkit-animation: fadeOut 0.4s;
+	/*
+	display: block!important;
+	*/
+}
+.my-fader.ng-hide-remove {
+	-webkit-animation: fadeIn 0.4s;
+}

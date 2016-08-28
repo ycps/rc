@@ -1,0 +1,81 @@
+<!--
+<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+	<div>
+		<md-input-container>
+			<label>Title</label><input ng-model="user.title">
+		</md-input-container>
+		<md-input-container>
+			<label>Email</label><input ng-model="user.email" type="email">
+		</md-input-container>
+	</div>
+</md-content>
+-->
+<div layout="column" flex class="layout-max-width">
+<md-card><md-card-content><form name="userForm">
+
+	<md-input-container class="md-icon-float md-block">
+		<label>Nome Completo</label><md-icon class="material-icons">person</md-icon>
+		<input ng-model="VFORM.name" type="text" required name="name" ng-required="true" md-maxlength="50">
+		<div ng-messages="userForm.name.$error">
+			<div ng-message="required">Seu nome é necessário.</div>
+			<div ng-message="md-maxlength">Seu nome tem mais de 50 caracteres? Truco.</div>
+		</div>
+	</md-input-container>
+	
+	<br>
+	
+	<md-input-container class="md-icon-float md-block">
+		<label>CPF</label><md-icon class="material-icons">fingerprint</md-icon>
+		<input ng-model="VFORM.cpf" type="text" required name="cpf" ng-required="true" ui-mask="999-999-999.99">
+		<div class="myError" ng-if="VFORM.cpf && !validaCPF(VFORM.cpf)">CPF inválido</div>
+	</md-input-container>
+	
+	<br>
+	
+	<md-input-container class="md-block">
+		<label>Email</label><md-icon class="material-icons">email</md-icon>
+		<input required type="email" name="email" ng-model="VFORM.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+		<div ng-messages="userForm.email.$error" role="alert">
+			<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+				Digite um email válido.
+			</div>
+		</div>
+	</md-input-container>
+	
+	<br>
+	
+	<md-input-container class="md-block">
+		<label>Quem é você?</label><md-icon class="material-icons">list</md-icon>
+		<md-select ng-model="VFORM.nick">
+			<md-option ng-repeat="nick in nicks" value="{{nick}}">{{nick}}</md-option>
+		</md-select>
+	</md-input-container>
+	
+	<br><br>
+	
+	<md-input-container class="md-icon-float md-block" flex-gt-sm>
+		<label>Usuário</label><md-icon class="material-icons">person_pin</md-icon>
+		<input ng-model="VFORM.user" type="text" required name="user" ng-required="true" md-maxlength="30">
+		<div ng-messages="userForm.user.$error">
+			<div ng-message="required">Você precisa de um usuário pra acessar o sistema</div>
+			<div ng-message="md-maxlength">Você precisa de mais de 30 caracteres? Tá de sacanagem..</div>
+		</div>
+	</md-input-container>
+	
+	<br>
+	
+	<md-input-container class="md-icon-float md-block">
+		<label>Senha</label><md-icon class="material-icons">vpn_key</md-icon>
+		<input ng-model="VFORM.pswd" type="password" required name="pswd" ng-required="true" md-maxlength="30">
+		<div ng-messages="userForm.pswd.$error">
+			<div ng-message="required">Escolha uma senha</div>
+			<div ng-message="md-maxlength">Relaxa, sua senha não precisa de mais de 30 caracteres.</div>
+		</div>
+	</md-input-container>
+
+<md-card-actions layout="row" layout-align="end center">
+<md-button ng-click='VFORM.button();' ng-disabled="userForm.name.$error.required||userForm.name.$error.md-maxlength||userForm.user.$error.required||userForm.user.$error.md-maxlength||userForm.pswd.$error.required||pswdForm.pswd.$error.md-maxlength||!validaCPF(VFORM.cpf)" >Registrar</md-button>
+</md-card-actions>
+
+</form></md-card-content></md-card>
+</div>

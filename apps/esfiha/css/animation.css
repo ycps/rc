@@ -1,0 +1,100 @@
+/*.well {
+	-webkit-animation: fadeInLeft 1.0s;
+	animation: fadeInLeft 1.0s;
+}
+
+div {
+	-webkit-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.animated-class.ng-enter {
+	-webkit-animation: bounceIn 1s;
+	-moz-animation: bounceIn 1s;
+	-ms-animation: bounceIn 1s;
+	animation: bounceIn 1s;
+}
+.animated-class.ng-leave {
+	-webkit-animation: bounceOut 1s;
+	-moz-animation: bounceOut 1s;
+	-ms-animation: bounceOut 1s;
+	animation: bounceOut 1s;
+}*/
+
+.animated-class.dropa.ng-enter {
+	-webkit-animation: jello 2s;
+	animation: jello 2s;
+}
+
+.animated-class.dropa.ng-leave {
+	/*-webkit-animation: hinge 1s;
+	animation: hinge 1s;*/
+}
+
+.ng-enter {
+	-webkit-animation: fadeIn 1s;
+	-moz-animation: fadeIn 1s;
+	-ms-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+.ng-leave {
+	-webkit-animation: fadeOut 0s;
+	-moz-animation: fadeOut 0s;
+	-ms-animation: fadeOut 0s;
+	animation: fadeOut 0s;
+}
+.grid-pedido.ng-enter {
+	-webkit-animation: rollIn 1s;
+	-moz-animation: rollIn 1s;
+	-ms-animation: rollIn 1s;
+	animation: rollIn 1s;
+}
+
+/*.panel.ng-leave {
+	-webkit-animation: hinge 3s;
+	-moz-animation: hinge 3s;
+	-ms-animation: hinge 3s;
+	animation: hinge 3s;
+}*/
+
+.new-flavor {
+	-webkit-animation: rubberBand 2s;
+	-moz-animation: rubberBand 2s;
+	-ms-animation: rubberBand 2s;
+	animation: rubberBand 2s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.msg-warn {
+	-webkit-animation: tada 2s;
+	-moz-animation: tada 2s;
+	-ms-animation: tada 2s;
+	animation: pulse 1s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.item{
+    /* other css removed for brevity */
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    transition: all 1s linear;
+}
+.hidden {
+    width: 0; /* reset everything that might affect the size/visibility */
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    transition: all 1s linear;
+}

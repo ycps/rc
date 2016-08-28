@@ -1,0 +1,67 @@
+.card-media{background-color:#999999;}
+/*
+.hint{
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    color: grey;
+}
+.hint.ng-hide,
+.hint.ng-enter,
+.hint.ng-leave.ng-leave-active {
+    bottom: 26px;
+    opacity: 0; }
+.hint.ng-leave,
+.hint.ng-enter.ng-enter-active {
+    bottom: 7px;
+    opacity: 1; }
+
+.test{
+	position: absolute;
+	left: 2px;
+	right: auto;
+	bottom: 7px;
+	font-size: 12px;
+	line-height: 14px;
+	transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+	color: grey;
+}
+*/
+/*.layout-max-width{
+width: 100%;
+max-width: 52em;
+margin: 0 auto;
+}
+img{
+	display:block;
+	width: 100%;
+	max-width: 52em;
+	margin: 0 auto;
+}*/
+
+.myError{
+color:rgb(221, 44, 0);
+display:block;
+font-family:sans-serif;
+font-size:12px;
+height:14px;
+line-height:14px;
+margin-top:0px;
+opacity:1;
+overflow-x:hidden;
+overflow-y:hidden;
+padding-left:0px;
+padding-right:5px;
+padding-top:5px;
+text-shadow:rgb(243, 243, 243) 0px 1px 0px;
+transition-delay:0s;
+transition-duration:0.3s;
+transition-property:all;
+transition-timing-function:cubic-bezier(0.55, 0, 0.55, 0.2);
+width:460.333px;
+-webkit-font-smoothing:antialiased
+}

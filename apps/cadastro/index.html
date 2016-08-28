@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html ng-app="Cuecadastro" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>CueCadastro</title>
+	<meta charset="utf-8" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<noscript>
+		<style type="text/css">.container-fluid {display:none;}</style>
+		<div class="noscriptmsg" >
+			<div class="well"><p><b>
+				<h2>Aviso:</h2>
+				<h3>
+				Para completa funcionalidade deste site é necessário habilitar o JavaScript.
+				Aqui estão as <a href="http://www.enable-javascript.com/pt/" target="_blank">
+				instruções de como habilitar o JavaScript no seu navegador</a>.
+				</h3>	C.U.E.C.A
+			</b></p></div>
+		</div>
+	</noscript>
+		<!-- FAVICONS -->
+	<!--
+	<link rel="shortcut icon" href="media/favicon.ico" />
+	<link rel="icon" href="media/favicon.ico" />
+	-->
+		<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<!-- jQuery Mobile  -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<!-- jQuery UI  -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	
+		<!-- ANGULARJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
+		<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+		<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+		<!-- Angular Material Icons -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Angular UI -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
+	
+		<!-- NProgress -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js" async></script>
+	
+		<!-- CUSTOM -->
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/animation.css" rel="stylesheet" type="text/css">
+	<script src="src/js/MainCtrl.js" defer></script>
+	
+<style></style></head>
+<body layout="row" ng-cloak ng-controller="MainCtrl"><div class="container-fluid">
+	<!--
+	<div ng-if="alerts.length > 0" class="panel-header navbar navbar-fixed-top animated slideInDown">
+		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+	</div>
+	-->
+	<md-toolbar class="">
+		<div class="md-toolbar-tools">
+			<h1 class="md-flex">CueCadastro</h1>
+		</div>
+	</md-toolbar>
+	<md-content flex layout-padding>
+		<p>
+			Cadastro para área restrita do site da C.U.E.C.A
+		</p>
+	</md-content>
+	
+	<div ng-if="VFORM.show" ng-model="VFORM.model">
+		<div ng-include="'html/viewForm.html'"></div>
+	</div>
+	
+</div></body>
+</html>

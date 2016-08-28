@@ -1,0 +1,49 @@
+.well{
+    max-width:500px;
+	margin-right:auto;
+	margin-left:auto;
+/*
+    margin:0 auto;make it centered*/
+}
+/*
+.panel{
+	background:#CCC;
+}
+
+body{
+	background:#567;
+}*/
+
+.thumbnail {
+    position: relative;
+}
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+
+.panel-transparent {
+	background: none;
+}
+
+.panel-transparent .panel-heading{
+	background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+	background: rgba(46, 51, 56, 0.2)!important;
+}
+
+.myExFontAwesomeJumboh1{
+	/*color: rgb(255, 255, 255);
+	font-family: museo-slab, Montserrat, Georgia, 'Times New Roman', Times, serif;*/
+	font-size: 58px;
+	font-weight: 500;
+	letter-spacing: -2px;
+	line-height: 58px;
+	text-shadow: rgb(250,250,250) 4px 3px 0px , rgba(0, 0, 0, 0.125) 9px 8px 0px;
+	/*width: 419px;
+	text-align: center;*/
+}

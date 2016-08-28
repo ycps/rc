@@ -1,0 +1,131 @@
+<div class="well" style="">
+	
+	<h3 class="text-center">
+		<span class="fa fa-users"></span>&nbsp;Grupo {{GRUP.mygroup}}
+	</h3>
+	
+	<div ng-if="ped.Valid" ng-repeat="ped in GRID.grid | filter:{Valid:true} track by $index" class="panel panel-primary grid-pedido">
+		<div class="panel-heading text-center">
+			<span class="fa fa-user"></span>&nbsp;
+			<b>{{$index+1}}. {{(ped.Usuario)}}:</b>
+		</div>
+		<div class="panel-body">
+			<div ng-if="esf > 0 && $index > 1" ng-repeat="esf in ped.choice track by $index">
+				<div class="pull-left">
+					{{esf}}&nbsp;<span style="color:{{GLB.Flavors[$index].Color}};" class="fa fa-{{GLB.Flavors[$index].Gliphicon}} fa-lg"></span>
+					&nbsp;{{GLB.Flavors[$index].Nome}}
+				</div>
+				<div class="pull-right text-muted">{{GLB.toReal(esf * GLB.Flavors[$index].Preco)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div ng-if="ped.Exp">
+				<div class="pull-left">
+					<span style="color:{{GLB.Flavors[0].Color}};" class="fa fa-{{GLB.Flavors[0].Gliphicon}} fa-lg"></span>&nbsp;{{ped.Exn}}
+				</div>
+				<div class="pull-right text-muted">{{GLB.toReal(ped.Exp)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="text-right">
+				<!--<h4><span>{{GLB.toReal(ped.total)}}</span></h4>+ {{GLB.toReal(GRID.taxa/GRID.numPedintesValidos)}}!-->
+				<h4><span>{{GLB.toReal(ped.totalMoney)}}</span></h4>+ {{GLB.toReal((GRID.taxa*ped.totalQuantity)/GRID.totl.totalQuantity)}}
+			</div>
+			
+			<div class="text-right">
+				<p class="small text-muted">{{ped.totalQuantity}} esfihas.</p>
+			</div>
+			
+			<button class="text-left btn btn-xs" ng-click="GRID.toggle(ped.Grupo,ped.Usuario,ped.TimeStamp)">
+				<span class="fa fa-eye-slash"></span>&nbsp;
+			</button>
+			
+		</div>
+		<div class="panel-footer">
+			<div class="text-muted"><span class="fa fa-clock-o"></span>&nbsp;
+				{{GLB.toLocaleTimeString(ped.UTS)}}
+			</div>
+		</div>
+	</div>
+	
+	
+	<h4 ng-if="GRID.numPedintesValidos < GRID.grid.length " class="text-center">
+		<span class="fa fa-trash-o"></span>&nbsp;Pedidos removidos
+	</h4>
+	<div ng-if="!ped.Valid" ng-repeat="ped in GRID.grid | filter:{Valid:false} track by $index" class="panel panel-danger disabled panel-transparent">
+		<div class="panel-heading text-center"><b>{{(ped.Usuario)}}:</b></div>
+		<div class="panel-body">
+			<div ng-if="esf > 0 && $index > 1" ng-repeat="esf in ped.choice track by $index">
+				<div class="pull-left">
+					{{esf}}&nbsp;<span style="color:{{GLB.Flavors[$index].Color}};" class="fa fa-{{GLB.Flavors[$index].Gliphicon}}"></span>
+					&nbsp;{{GLB.Flavors[$index].Nome}}
+				</div>
+				<div class="pull-right text-muted">{{GLB.toReal(esf * GLB.Flavors[$index].Preco)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			<div ng-if="ped.Exp">
+				<div class="pull-left">
+					<span style="color:{{GLB.Flavors[0].Color}};" class="fa fa-{{GLB.Flavors[0].Gliphicon}}"></span>&nbsp;{{ped.Exn}}
+				</div>
+				<div class="pull-right text-muted">{{GLB.toReal(ped.Exp)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="text-right"><h4><span>{{GLB.toReal(ped.totalMoney)}}</span></h4></div>
+			<div class="text-right"><p class="small text-muted">{{ped.totalQuantity}} esfihas.</p></div>
+			<button class="text-left btn btn-xs" ng-click="GRID.toggle(ped.Grupo,ped.Usuario,ped.TimeStamp)">
+				<span class="fa fa-eye"></span>&nbsp;
+			</button>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<button ng-click="GRID.button()" type="button" class="btn btn-lg btn-success btn-block">
+			<span class="fa fa-plus"></span>&nbsp;Adicionar outro pedido
+		</button>
+	</div>
+	
+	<!-- C.U.E.C.A !-->
+	
+	<div ng-if="GRID.totl.totalQuantity" class="panel panel-primary">
+		<div class="panel-heading text-center"><h3>
+			<span class="fa fa-home"></span>&nbsp;
+			<b>C.U.E.C.A.</b>
+			</h3></div>
+		<div class="panel-body">
+			<div ng-if="esf > 0 && $index > 1" ng-repeat="esf in GRID.totl.choice track by $index">
+				<div class="pull-left h4">
+					{{esf}}&nbsp;<span style="color:{{GLB.Flavors[$index].Color}};" class="fa fa-{{GLB.Flavors[$index].Gliphicon}} fa-lg"></span>
+					&nbsp;{{GLB.Flavors[$index].Nome}}
+				</div>
+				<div class="pull-right h4 text-muted">{{GLB.toReal(esf * GLB.Flavors[$index].Preco)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div ng-repeat="ext in GRID.totl.extra track by $index">
+				<div class="pull-left h4">
+					<span style="color:{{GLB.Flavors[0].Color}};" class="fa fa-{{GLB.Flavors[0].Gliphicon}} fa-lg"></span>&nbsp;{{ext.n}}
+				</div>
+				<div class="pull-right h4 text-muted">{{GLB.toReal(ext.p)}}</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="text-right">
+				<p class="small text-muted">{{GRID.numPedintesValidos}} louco{{GRID.numPedintesValidos>1?"s":""}}.
+				{{GRID.totl.totalQuantity}} esfihas. 1 Casa.</p>
+				<h2><span>{{GLB.toReal(GRID.totl.totalMoney)}}</span></h2>+ {{GLB.toReal(GRID.taxa)}}
+			</div>
+		</div>
+		<div class="panel-footer text-center">
+			<div ng-if="GRID.totl.totalQuantity < 10" class="msg-warn"><span class="label label-warning">Não entregam menos que 10</span></div>
+		</div>
+	</div>
+	
+	<a ng-disabled="GRID.totl.totalQuantity < 10" href="tel:32890228" type="button" class="btn btn-lg btn-danger btn-block" role="button">
+		<span class="fa fa-phone"></span>&nbsp;Ligar agora (3289 0228)
+	</a>
+	
+	<button ng-click=" GRID.fini(); GRUP.init(); " type="button" class="btn btn-primary btn-block">
+		<span class="fa fa-arrow-left"></span>&nbsp;Trocar de grupo
+	</button>
+	
+</div>

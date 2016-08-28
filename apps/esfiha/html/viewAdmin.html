@@ -1,0 +1,22 @@
+<div class="well" style="">
+<h3>Painel de Administrador</h3><br>
+
+<div class="form-group">
+	<textarea placeholder="Insira consulta SQL" class="form-control" rows="7" ng-model="$parent.VADM_query" >SQL</textarea>
+</div>
+
+<div class="form-group">
+	<button ng-click="VADM_ButtonSend(true);" type="button" class="btn btn-primary btn-block btn-lg">
+		<span class="glyphicon glyphicon-search"></span>&nbsp
+		Enviar consulta</button>
+</div>
+
+<h3>Resposta</h3>
+<div class="panel">
+	<div class="panel-heading"></div>
+	<div class="panel-body table-striped">
+		<div id="VADM_Result" class="panel-body table-striped">(A resposta aparecerá aqui)</div>
+	</div>
+</div>
+
+</div>

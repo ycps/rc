@@ -1,0 +1,106 @@
+<div class="well text-center" style="">
+		
+		<div class="form-group">
+			<h3>
+				<!--<
+				<span class="fa fa-user fa-lg"></span>&nbsp;
+				!-->
+				Digite seu nome:
+			</h3>
+			
+			<form name="PICK_form">
+			<!--<
+				<input placeholder="Nome" class="form-control" type="text" name="PICK_name" ng-model="PICK.name" required>
+			<!--<!-->
+				<div class="input-group margin-bottom-sm">
+					<span class="input-group-addon"><span class="fa fa-user fa-fw"></span></span>
+					<input class="form-control" type="text" placeholder="Nome" name="PICK_name" ng-model="PICK.name" required>
+				</div>
+			</form>
+			<!--!-->
+			<span class="bg-warning" ng-if="PICK_form.PICK_name.$dirty && PICK_form.PICK_name.$invalid">
+				<span ng-if="PICK_form.PICK_name.$error.required">
+					<h4><span class="label label-danger">
+						<span class="fa fa-info-circle fa-lg"></span>&nbsp;
+							Nome necessário.</span></h4></span></span>
+			
+			
+		</div>
+		
+		<span class='h2'>&nbsp;</span>
+		<div class="form-group">
+			<h3>
+				<span class="fa fa-check-square-o fa-lg"></span>&nbsp;
+				<!--
+				<span class="fa fa-cutlery fa-lg"></span>
+				<span class="fa fa-shopping-cart fa-lg"></span>
+				!-->
+				Escolha suas esfihas:
+			</h3>
+			
+			<div ng-repeat="flavor in GLB.Flavors" ng-if="$index > 1" class="panel ">
+				<table class="table">
+					<tr class="row">
+						<td class="col-md-4">
+							<span style="color:{{flavor.Color}};" class="fa fa-{{flavor.Gliphicon}} fa-lg"></span>&nbsp;
+						</td><td class="col-md-4">
+							<h4>{{flavor.Nome}}</h4>
+							<div ng-if="$index > 19" class="new-flavor"><span class="label label-success">NOVO</span></div>
+						</td><td class="col-md-4">
+							<span class="badge">{{GLB.toReal(flavor.Preco)}}</span></td>
+					</tr>
+					<tr class="row">
+						<td class="col-xs-4">
+							<button ng-click="PICK.choice[$index]=PICK.choice[$index]-1" type="button" class="btn btn-md btn-primary" ng-disabled="PICK.choice[$index]<=0">
+							<span class="fa fa-minus fa-lg"></span>
+							</button></td>
+						
+						<td class="col-xs-4"><h4>{{PICK.choice[$index]}}</h4></td>
+						
+						<td class="col-xs-4">
+							<button ng-click="PICK.choice[$index]=PICK.choice[$index]+1" type="button" class="btn btn-md btn-primary">
+							<span class="fa fa-plus fa-lg"></span>
+							</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<span class='h2'>&nbsp;</span>
+		<div class="form-group">
+			<h3>
+				<span class="fa fa-glass fa-lg"></span>&nbsp;
+				Insira item extra (opcional)
+			</h3>
+			<table class="table">
+				<tr class="row"><td class="col-xs-6">Tipo</td><td class="col-xs-6"><span class="badge">Preço</span></td></tr>
+				<tr class="row">
+					<td class="col-xs-6">
+						<div class="input-group margin-bottom-sm"><span class="input-group-addon"><span class="fa fa-tag fa-fw"></span></span>
+							<input type="text" placeholder="nome" class="form-control" ng-model=" PICK.choice[0] ">
+						</div>
+					</td>
+					
+					<td class="col-xs-6">
+						<div class="input-group margin-bottom-sm"><span class="input-group-addon"><span class="fa fa-usd fa-fw"></span></span>
+							<input type="number" placeholder="preço" class="form-control" ng-model=" PICK.choice[1]" min="0.00" step="0.01" max="2500" value="00.00" />
+						</div>
+					</td></tr>
+			</table>
+		</div>
+		
+		<span class='h2'>&nbsp;</span>
+		<button ng-click="PICK.button(true)" type="button" class="btn btn-lg btn-primary btn-block" ng-disabled="PICK.totalQuantity(PICK.choice)<=0||PICK_form.PICK_name.$error.required">
+			<span class="fa fa-check"></span>&nbsp;Tô dentro!
+			
+		</button>
+		<button ng-click="PICK.button(false)" type="button" class="btn btn-lg btn-danger btn-block" ng-if="PICK.totalQuantity(PICK.choice)<=0&&PICK_form.PICK_name.$error.required">
+			<span class="fa fa-th-list"></span>&nbsp;Apenas ver pedidos
+		</button>
+		
+		<span class='h1'>&nbsp;</span>
+		<div ng-if="PICK.totalQuantity(PICK.choice)>0" class="panel-footer navbar navbar-fixed-bottom">
+					{{PICK.totalQuantity(PICK.choice)}} esfihas:
+					{{GLB.toReal(PICK.totalMoney(PICK.choice))}}
+		</div>
+</div>
