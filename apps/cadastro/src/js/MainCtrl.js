@@ -4,7 +4,7 @@ app.controller("MainCtrl",function($scope,$http,$timeout,$mdDialog){
 	{
 	$scope.VFORM={};
 	$scope.VFORM.init=function(){
-		$scope.nicks=["bié","buck","castro","consta","duds","gabriel","gil","henrique","luan","lula","palmares","paty","robin","nenhum desses"];
+		$scope.nicks=["bié","buck","castro","chaves","consta","duds","gabriel","giu","henrique","luan","mica","miguel","palmares","paty","robin","nenhum desses"];
 		//code
 		$scope.VFORM.show=true;
 	}
